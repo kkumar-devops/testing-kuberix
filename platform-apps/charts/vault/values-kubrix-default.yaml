@@ -34,9 +34,25 @@ vault:
         - -c
         - | 
             cd /usr/local/libexec/vault
-            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            # Detect architecture
+            ARCH=$(uname -m)
+            case $ARCH in
+              x86_64|amd64)
+                KUBECTL_ARCH="amd64"
+                JQ_ARCH="linux64"
+                ;;
+              aarch64|arm64)
+                KUBECTL_ARCH="arm64"
+                JQ_ARCH="linux-arm64"
+                ;;
+              *)
+                echo "Unsupported architecture: $ARCH"
+                exit 1
+                ;;
+            esac
+            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${KUBECTL_ARCH}/kubectl"
             chmod +x kubectl
-            curl -L -o jq https://github.com/stedolan/jq/releases/download/jq-1.8.1/jq-linux64
+            curl -L -o jq "https://github.com/stedolan/jq/releases/download/jq-1.8.1/jq-${JQ_ARCH}"
             chmod +x jq
         volumeMounts:
           - name: plugins
