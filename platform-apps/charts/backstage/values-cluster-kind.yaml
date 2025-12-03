@@ -45,9 +45,11 @@ backstage:
                 url: https://argocd.127-0-0-1.nip.io/
                 token: ${ARGOCD_AUTH_TOKEN}
 
-      # OIDC configuration - callbackUrl override for external access
-      # Other OIDC settings (metadataUrl, clientId, clientSecret) come from values-kubrix-default.yaml
-      # Helm will merge these values
+      auth:
+        providers:
+          oidc:
+            development:
+              callbackUrl: http://backstage.127-0-0-1.nip.io/api/auth/oidc/handler/frame
 
       explore:
         tools:
