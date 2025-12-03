@@ -30,9 +30,9 @@ backstage:
 
       auth:
         providers:
-          oidc:
-            development:
-              callbackUrl: https://backstage.127-0-0-1.nip.io/api/auth/oidc/handler/frame
+          # oidc:
+          #   development:
+          #     callbackUrl: https://backstage.127-0-0-1.nip.io/api/auth/oidc/handler/frame
 
       explore:
         tools:
