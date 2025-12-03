@@ -1,1 +1,17 @@
-teams: []
+teams:
+# new team stanza for team admins
+  - name: admins
+    sourceRepos:
+      - 'https://github.com/kkumar-devops/admins-*'
+    clusterResourceWhitelist:
+      - group: ""
+        kind: Namespace
+      - group: kargo.akuity.io
+        kind: Project
+    appOfAppsRepo:
+      repoURL: https://github.com/kkumar-devops/admins-apps
+      path: demo-apps
+      revision: main
+    multiStageKargoAppSet:
+      github:
+        organization: kkumar-devops
