@@ -12,12 +12,10 @@ backstage:
   metrics:
     serviceMonitor:
       enabled: true
-  imagePullSecrets:
-    - name: rcc-quay
   backstage:
     image:
-      registry: lms-dev2.redcapcloud.com/library
-      repository: backstage
+      registry: docker.io
+      repository: kriskuma/backstage
       tag: latest
     extraEnvVarsSecrets:
       - sx-cnp-secret
