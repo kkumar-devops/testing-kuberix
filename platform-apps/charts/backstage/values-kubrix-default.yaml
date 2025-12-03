@@ -89,6 +89,7 @@ backstage:
         auth:
           allowedProviders:
           - github
+          - oidc
 
       integrations:
         github:
