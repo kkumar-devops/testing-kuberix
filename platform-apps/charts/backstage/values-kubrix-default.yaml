@@ -17,9 +17,6 @@ backstage:
       registry: ghcr.io/suxess-it
       repository: sx-backstage
       tag: v1.43.3
-    # Platform emulation for ARM64 Mac (AMD64 image)
-    # Note: Requires Docker driver or containerd with emulation support
-    runtimeClassName: amd64-emulation
     extraEnvVarsSecrets:
       - sx-cnp-secret
       - backstage-db-secrets
