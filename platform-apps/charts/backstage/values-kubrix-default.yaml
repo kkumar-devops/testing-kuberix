@@ -88,8 +88,9 @@ backstage:
       kubrix:
         auth:
           allowedProviders:
-          - github
-          - oidc
+          - guest
+          # - github
+          # - oidc
 
       integrations:
         github:
@@ -139,32 +140,32 @@ backstage:
           secret: ${BACKEND_SECRET} # free sessionsecret for user sessions
         environment: development
         providers:
-          github:
-            development:
-              clientId: ${GITHUB_CLIENTID}
-              clientSecret: ${GITHUB_CLIENTSECRET}
-              signIn:
-                resolvers:
-                  - resolver: usernameMatchingUserEntityName
-                  - resolver: emailMatchingUserEntityProfileEmail
-                  - resolver: emailLocalPartMatchingUserEntityName
-              schedule:
-                frequency: PT30M
-                timeout: PT3M
-              additionalScopes: ['repo','workflow'] 
-          #guest: {}
-          oidc:
-            development:
-              metadataUrl: http://kubrix-keycloak-service.keycloak.svc.cluster.local:8080/realms/kubrix #.well-known/openid-configuration can be ommited
-              callbackUrl: ~
-              clientId: backstage
-              clientSecret: ${OIDC_CLIENTSECRET}
-              additionalScopes: 'groups'
-              prompt: auto
-              signIn:
-                resolvers:
-                  - resolver: emailLocalPartMatchingUserEntityName
-                  - resolver: emailMatchingUserEntityProfileEmail
+          #github:
+          #  development:
+          #    clientId: ${GITHUB_CLIENTID}
+          #    clientSecret: ${GITHUB_CLIENTSECRET}
+          #    signIn:
+          #      resolvers:
+          #        - resolver: usernameMatchingUserEntityName
+          #        - resolver: emailMatchingUserEntityProfileEmail
+          #        - resolver: emailLocalPartMatchingUserEntityName
+          #    schedule:
+          #      frequency: PT30M
+          #      timeout: PT3M
+          #    additionalScopes: ['repo','workflow'] 
+          guest: {}
+          #oidc:
+          #  development:
+          #    metadataUrl: http://kubrix-keycloak-service.keycloak.svc.cluster.local:8080/realms/kubrix #.well-known/openid-configuration can be ommited
+          #    callbackUrl: ~
+          #    clientId: backstage
+          #    clientSecret: ${OIDC_CLIENTSECRET}
+          #    additionalScopes: 'groups'
+          #    prompt: auto
+          #    signIn:
+          #      resolvers:
+          #        - resolver: emailLocalPartMatchingUserEntityName
+          #        - resolver: emailMatchingUserEntityProfileEmail
 
       scaffolder: {}
         # see https://backstage.io/docs/features/software-templates/configuration for software template options
