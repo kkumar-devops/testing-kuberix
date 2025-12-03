@@ -155,7 +155,7 @@ backstage:
           #guest: {}
           oidc:
             development:
-              metadataUrl: http://localhost:8082/realms/kubrix/.well-known/openid-configuration
+              metadataUrl: http://kubrix-keycloak-service.keycloak.svc.cluster.local:8080/realms/kubrix/.well-known/openid-configuration
               callbackUrl: ~
               clientId: backstage
               clientSecret: ${OIDC_CLIENTSECRET}
