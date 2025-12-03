@@ -32,7 +32,7 @@ backstage:
         providers:
           oidc:
             development:
-              callbackUrl: https://backstage.127-0-0-1.nip.io/api/auth/oidc/handler/frame
+              callbackUrl: http://backstage.127-0-0-1.nip.io/api/auth/oidc/handler/frame
 
       explore:
         tools:
