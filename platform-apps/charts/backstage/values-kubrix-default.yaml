@@ -14,9 +14,11 @@ backstage:
       enabled: true
   backstage:
     image:
-      registry: ghcr.io/suxess-it
-      repository: sx-backstage
-      tag: v1.43.3
+      registry: lms-dev2.redcapcloud.com/library
+      repository: backstage
+      tag: latest
+    imagePullSecrets:
+      - name: rcc-quay
     extraEnvVarsSecrets:
       - sx-cnp-secret
       - backstage-db-secrets
