@@ -8,7 +8,7 @@
 <h4>No Misconfigurations found</h4>
 
 <h3>Target <code>quay.io/keycloak/keycloak-operator:26.4.5 (redhat 9.7)</code></h3>
-<h4>Vulnerabilities (2)</h4>
+<h4>Vulnerabilities (3)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -27,6 +27,13 @@
     <tr>
         <td><code>java-21-openjdk-headless</code></td>
         <td>CVE-2025-65018</td>
+        <td>HIGH</td>
+        <td>1:21.0.9.0.10-1.el9</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><code>java-21-openjdk-headless</code></td>
+        <td>CVE-2025-66293</td>
         <td>HIGH</td>
         <td>1:21.0.9.0.10-1.el9</td>
         <td></td>
