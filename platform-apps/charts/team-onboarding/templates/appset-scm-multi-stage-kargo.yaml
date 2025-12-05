@@ -21,14 +21,26 @@ spec:
       {{- end }}
       {{- with $team.multiStageKargoAppSet.github }}
       github:
-        # The GitHub organization to scan.
+        # Support both organization and user accounts
+        # For organizations, use 'organization' field
+        # For user accounts, use 'user' field (will fall back to organization field)
+        # IMPORTANT: ArgoCD SCM Provider only supports GitHub organizations, not user accounts
+        # For user accounts, it will try /orgs/{user}/repos which returns 404
+        # Workaround: Use 'user' field and the SCM provider will attempt it (may fail)
+        # Better solution: Use appOfAppsRepo with Git generator (see appset-scm-multi-stage-kargo-user.yaml)
+        {{- if .organization }}
         organization: {{ .organization }}
+        {{- else if .user }}
+        # For user accounts: ArgoCD will try /orgs/{user}/repos which doesn't work
+        # This is a known limitation - consider using appOfAppsRepo pattern instead
+        organization: {{ .user }}
+        {{- end }}
         tokenRef:
           secretName: {{ $team.name }}-appset-github-token
           key: token
       {{- end }}
       filters:
-      - repositoryMatch: ^{{ .name }}
+      - repositoryMatch: ^{{ $team.name }}
         pathsExist: [app-stages.yaml]
       requeueAfterSeconds: {{ $.Values.scmAppsetRequeueAfterSeconds }}
   template:

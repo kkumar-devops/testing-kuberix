@@ -1,0 +1,65 @@
+{{- range $team := .Values.teams }}
+{{- if $team.multiStageKargoAppSet }}
+{{- if $team.multiStageKargoAppSet.github.user }}
+{{- /* Alternative ApplicationSet for user accounts using Git generator with app-of-apps pattern */}}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ $team.name }}-appset-user
+  namespace: adn-{{ $team.name }}
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  # For user accounts, we use a Git generator that scans the app-of-apps repo
+  # This requires the team to maintain their app definitions in admins-apps repo
+  {{- if $team.appOfAppsRepo }}
+  - git:
+      repoURL: {{ $team.appOfAppsRepo.repoURL }}
+      revision: {{ $team.appOfAppsRepo.revision | default "main" }}
+      directories:
+      - path: {{ $team.appOfAppsRepo.path | default "." }}
+      requeueAfterSeconds: {{ $.Values.scmAppsetRequeueAfterSeconds }}
+  {{- else }}
+  # Fallback: Use SCM Provider even for user accounts (may not work)
+  - scmProvider:
+      cloneProtocol: https
+      github:
+        organization: {{ $team.multiStageKargoAppSet.github.user }}
+        tokenRef:
+          secretName: {{ $team.name }}-appset-github-token
+          key: token
+      filters:
+      - repositoryMatch: ^{{ $team.name }}
+        pathsExist: [app-stages.yaml]
+      requeueAfterSeconds: {{ $.Values.scmAppsetRequeueAfterSeconds }}
+  {{- end }}
+  template:
+    metadata:
+      name: '{{`{{ .path.basename }}`}}'
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: {{ $team.name }}-project
+      sources:
+      - repoURL: {{ $.Values.multiStageKargoAppSetHelmRepo }}
+        targetRevision: '{{ $.Values.default.targetRevision }}'
+        path: team-apps/onboarding-apps-charts/multi-stage-app-with-kargo-pipeline
+        helm:
+          valueFiles:
+          - $values/app-stages.yaml
+      - repoURL: '{{`{{ .path }}`}}'
+        targetRevision: main
+        ref: values
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: adn-{{ $team.name }}
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+---
+{{- end }}
+{{- end }}
+{{- end }}
+
