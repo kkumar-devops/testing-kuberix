@@ -7,7 +7,7 @@
 <h4>No Vulnerabilities found</h4>
 <h4>No Misconfigurations found</h4>
 <h3>Target <code>Node.js</code></h3>
-<h4>Vulnerabilities (7)</h4>
+<h4>Vulnerabilities (9)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -50,6 +50,20 @@
         <td>HIGH</td>
         <td>7.2.0</td>
         <td>10.3.0</td>
+    </tr>
+    <tr>
+        <td><code>jws</code></td>
+        <td>CVE-2025-65945</td>
+        <td>HIGH</td>
+        <td>3.2.2</td>
+        <td>3.2.3, 4.0.1</td>
+    </tr>
+    <tr>
+        <td><code>jws</code></td>
+        <td>CVE-2025-65945</td>
+        <td>HIGH</td>
+        <td>4.0.0</td>
+        <td>3.2.3, 4.0.1</td>
     </tr>
     <tr>
         <td><code>node-forge</code></td>
