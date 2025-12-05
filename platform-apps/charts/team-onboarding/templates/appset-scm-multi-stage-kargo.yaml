@@ -40,7 +40,7 @@ spec:
           key: token
       {{- end }}
       filters:
-      - repositoryMatch: ^{{ $team.name }}
+      - repositoryMatch: {{ $team.multiStageKargoAppSet.repositoryMatch | default (printf "^%s" $team.name) }}
         pathsExist: [app-stages.yaml]
       requeueAfterSeconds: {{ $.Values.scmAppsetRequeueAfterSeconds }}
   template:
@@ -58,7 +58,7 @@ spec:
           valueFiles:
           - $values/app-stages.yaml
       - repoURL: '{{`{{ .url }}`}}'
-        targetRevision: main
+        targetRevision: {{ $team.appOfAppsRepo.revision | default "main" }}
         ref: values
       destination:
         server: https://kubernetes.default.svc
