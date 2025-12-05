@@ -3,6 +3,8 @@ teams:
   - name: admins
     sourceRepos:
       - 'https://github.com/nphaseinc/model-kuberix-app'
+      - 'https://github.com/kkumar-devops/kubrix-model-airflow.git'
+      - 'https://github.com/kkumar-devops/testing-kuberix.git'
     clusterResourceWhitelist:
       - group: ""
         kind: Namespace
