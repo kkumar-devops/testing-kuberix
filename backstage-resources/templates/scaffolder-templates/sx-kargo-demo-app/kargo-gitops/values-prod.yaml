@@ -1,5 +1,19 @@
-# applies to podtato-head-entry deployment only
+# Production environment values
+image:
+  tag: "prod"  # CI/CD will update this with actual image tag
+
+replicaCount: 3
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
 ingress:
+  enabled: true
   className: nginx
   annotations:
     dns.gardener.cloud/class: garden

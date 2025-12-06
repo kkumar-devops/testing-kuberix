@@ -1,5 +1,9 @@
-# applies to podtato-head-entry deployment only
+# QA environment values
+image:
+  tag: "qa"  # CI/CD will update this with actual image tag
+
 ingress:
+  enabled: true
   className: nginx
   annotations:
     dns.gardener.cloud/class: garden
