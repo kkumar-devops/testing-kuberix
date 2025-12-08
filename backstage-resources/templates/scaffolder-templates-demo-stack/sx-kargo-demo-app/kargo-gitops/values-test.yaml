@@ -1,9 +1,14 @@
-# applies to podtato-head-entry deployment only
+# Test environment values
+image:
+  tag: "test"  # CI/CD will update this with actual image tag
+
 ingress:
+  enabled: true
   className: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/ttl: "60"
-    cert-manager.io/cluster-issuer: default-issuer
+    dns.gardener.cloud/class: garden
+    dns.gardener.cloud/dnsnames: ${{values.team}}-${{values.application_id}}-test.${{values.fqdn}}
+    dns.gardener.cloud/ttl: "180"
   hosts:
     - host: ${{values.team}}-${{values.application_id}}-test.${{values.fqdn}}
       paths:

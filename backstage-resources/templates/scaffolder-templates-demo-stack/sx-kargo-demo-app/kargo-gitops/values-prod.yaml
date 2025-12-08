@@ -1,9 +1,24 @@
-# applies to podtato-head-entry deployment only
+# Production environment values
+image:
+  tag: "prod"  # CI/CD will update this with actual image tag
+
+replicaCount: 3
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
 ingress:
+  enabled: true
   className: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/ttl: "60"
-    cert-manager.io/cluster-issuer: default-issuer
+    dns.gardener.cloud/class: garden
+    dns.gardener.cloud/dnsnames: ${{values.team}}-${{values.application_id}}-prod.${{values.fqdn}}
+    dns.gardener.cloud/ttl: "180"
   hosts:
     - host: ${{values.team}}-${{values.application_id}}-prod.${{values.fqdn}}
       paths:
