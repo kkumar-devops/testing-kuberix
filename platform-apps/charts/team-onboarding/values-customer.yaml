@@ -2,7 +2,7 @@ teams:
 # new team stanza for team admins
   - name: admins
     sourceRepos:
-      - 'https://github.com/nphaseinc/model-kuberix-app'
+      - 'https://github.com/nphaseinc/model-kubrix-app.git'
       - 'https://github.com/kkumar-devops/kubrix-model-airflow.git'
       - 'https://github.com/kkumar-devops/testing-kuberix.git'
     clusterResourceWhitelist:
@@ -11,7 +11,7 @@ teams:
       - group: kargo.akuity.io
         kind: Project
     appOfAppsRepo:
-      repoURL: https://github.com/nphaseinc/model-kuberix-app
+      repoURL: https://github.com/nphaseinc/model-kubrix-app.git
       path: demo-apps
       revision: master
     multiStageKargoAppSet:
