@@ -53,6 +53,7 @@ spec:
               - github.com
             allowedOwners:
               - suxess-it
+              - nphaseinc
             requestUserCredentials:
               secretsKey: USER_OAUTH_TOKEN
               additionalScopes:
@@ -88,7 +89,7 @@ spec:
           #repoUrlRepo: ${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}
           #repoUrlowner: ${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}
           repoUrlRepo: ${{ steps['catalogFetch'].output.entity.metadata.name }}-${{ parameters.application_id }}
-          repoUrlowner: suxess-it
+          repoUrlowner: nphaseinc
     - id: publish-gitopsreposetup
       name: Publish Template Gitops Repo
       action: publish:github
@@ -96,7 +97,7 @@ spec:
         sourcePath: ./kargo-gitops
         description: This is Kargo Demo App ${{ parameters.application_id }}
         #repoUrl: ${{ parameters.repoUrl }}
-        repoUrl: github.com?repo=${{ steps['catalogFetch'].output.entity.metadata.name }}-${{ parameters.application_id }}&owner=suxess-it
+        repoUrl: github.com?repo=${{ steps['catalogFetch'].output.entity.metadata.name }}-${{ parameters.application_id }}&owner=nphaseinc
         token: ${{ secrets.USER_OAUTH_TOKEN }}
         gitAuthorName: ${{ user.entity.metadata.name }}
         gitAuthorEmail: ${{ user.entity.spec.profile.email }}
