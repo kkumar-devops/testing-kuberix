@@ -17,4 +17,4 @@ teams:
     multiStageKargoAppSet:
       github:
         organization: nphaseinc
-      repositoryMatch: ^model-kuberix-app
+      repositoryMatch: ^model-kubrix-app
