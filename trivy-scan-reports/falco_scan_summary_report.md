@@ -467,84 +467,84 @@
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gnupg</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gnupg-l10n</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gnupg-utils</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gnupg2</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpg</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpg-agent</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpg-wks-client</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpg-wks-server</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpgconf</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpgsm</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>gpgv</code></td>
         <td>CVE-2025-68973</td>
         <td>HIGH</td>
         <td>2.2.40-1.1</td>
-        <td></td>
+        <td>2.2.40-1.1+deb12u2</td>
     </tr>
     <tr>
         <td><code>jq</code></td>
@@ -607,28 +607,28 @@
         <td>CVE-2025-6020</td>
         <td>HIGH</td>
         <td>1.5.2-6+deb12u1</td>
-        <td></td>
+        <td>1.5.2-6+deb12u2</td>
     </tr>
     <tr>
         <td><code>libpam-modules-bin</code></td>
         <td>CVE-2025-6020</td>
         <td>HIGH</td>
         <td>1.5.2-6+deb12u1</td>
-        <td></td>
+        <td>1.5.2-6+deb12u2</td>
     </tr>
     <tr>
         <td><code>libpam-runtime</code></td>
         <td>CVE-2025-6020</td>
         <td>HIGH</td>
         <td>1.5.2-6+deb12u1</td>
-        <td></td>
+        <td>1.5.2-6+deb12u2</td>
     </tr>
     <tr>
         <td><code>libpam0g</code></td>
         <td>CVE-2025-6020</td>
         <td>HIGH</td>
         <td>1.5.2-6+deb12u1</td>
-        <td></td>
+        <td>1.5.2-6+deb12u2</td>
     </tr>
     <tr>
         <td><code>libsqlite3-0</code></td>
@@ -1001,5 +1001,21 @@
 <h4>No Misconfigurations found</h4>
 
 <h3>Target <code>docker.io/redis/redis-stack:7.2.0-v11 (ubuntu 22.04)</code></h3>
-<h4>No Vulnerabilities found</h4>
+<h4>Vulnerabilities (1)</h4>
+<table>
+    <tr>
+        <th>Package</th>
+        <th>ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+    </tr>
+    <tr>
+        <td><code>gpgv</code></td>
+        <td>CVE-2025-68973</td>
+        <td>HIGH</td>
+        <td>2.2.27-3ubuntu2.1</td>
+        <td>2.2.27-3ubuntu2.5</td>
+    </tr>
+</table>
 <h4>No Misconfigurations found</h4>
