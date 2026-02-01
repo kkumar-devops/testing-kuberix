@@ -60,7 +60,7 @@
 </table>
 <h4>No Misconfigurations found</h4>
 <h3>Target <code>Node.js</code></h3>
-<h4>Vulnerabilities (105)</h4>
+<h4>Vulnerabilities (108)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -229,6 +229,27 @@
         <td>HIGH</td>
         <td>1.22.0</td>
         <td>1.25.2</td>
+    </tr>
+    <tr>
+        <td><code>fast-xml-parser</code></td>
+        <td>CVE-2026-25128</td>
+        <td>HIGH</td>
+        <td>4.5.3</td>
+        <td>5.3.4</td>
+    </tr>
+    <tr>
+        <td><code>fast-xml-parser</code></td>
+        <td>CVE-2026-25128</td>
+        <td>HIGH</td>
+        <td>5.2.5</td>
+        <td>5.3.4</td>
+    </tr>
+    <tr>
+        <td><code>fast-xml-parser</code></td>
+        <td>CVE-2026-25128</td>
+        <td>HIGH</td>
+        <td>5.3.0</td>
+        <td>5.3.4</td>
     </tr>
     <tr>
         <td><code>form-data</code></td>
