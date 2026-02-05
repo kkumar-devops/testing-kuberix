@@ -1,6 +1,6 @@
 
 <h3>Target <code>docker.io/kubeshop/testkube-api-server:2.4.3 (alpine 3.20.6)</code></h3>
-<h4>Vulnerabilities (12)</h4>
+<h4>Vulnerabilities (13)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -71,6 +71,13 @@
         <td>HIGH</td>
         <td>3.3.3-r0</td>
         <td>3.3.6-r0</td>
+    </tr>
+    <tr>
+        <td><code>libexpat</code></td>
+        <td>CVE-2026-24515</td>
+        <td>CRITICAL</td>
+        <td>2.7.0-r0</td>
+        <td>2.7.4-r0</td>
     </tr>
     <tr>
         <td><code>libssl3</code></td>
