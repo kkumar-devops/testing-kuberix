@@ -1,6 +1,6 @@
 
 <h3>Target <code>quay.io/frrouting/frr:9.1.0 (alpine 3.18.4)</code></h3>
-<h4>Vulnerabilities (23)</h4>
+<h4>Vulnerabilities (24)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -155,6 +155,13 @@
         <td>HIGH</td>
         <td>3.11.6-r0</td>
         <td>3.11.11-r0</td>
+    </tr>
+    <tr>
+        <td><code>sqlite-libs</code></td>
+        <td>CVE-2025-6965</td>
+        <td>CRITICAL</td>
+        <td>3.41.2-r2</td>
+        <td>3.41.2-r4</td>
     </tr>
     <tr>
         <td><code>sqlite-libs</code></td>
