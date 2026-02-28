@@ -567,7 +567,7 @@
 </table>
 <h4>No Misconfigurations found</h4>
 <h3>Target <code>Node.js</code></h3>
-<h4>Vulnerabilities (11)</h4>
+<h4>Vulnerabilities (14)</h4>
 <table>
     <tr>
         <th>Package</th>
@@ -605,6 +605,20 @@
         <td>10.2.1, 9.0.6, 8.0.5, 7.4.7, 6.2.1, 5.1.7, 4.2.4, 3.1.3</td>
     </tr>
     <tr>
+        <td><code>minimatch</code></td>
+        <td>CVE-2026-27903</td>
+        <td>HIGH</td>
+        <td>9.0.3</td>
+        <td>10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.3</td>
+    </tr>
+    <tr>
+        <td><code>minimatch</code></td>
+        <td>CVE-2026-27904</td>
+        <td>HIGH</td>
+        <td>9.0.3</td>
+        <td>10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.4</td>
+    </tr>
+    <tr>
         <td><code>next</code></td>
         <td>CVE-2025-55182</td>
         <td>CRITICAL</td>
@@ -624,6 +638,13 @@
         <td>HIGH</td>
         <td>15.2.3</td>
         <td>14.2.34, 15.0.6, 15.1.10, 15.2.7, 15.3.7, 15.4.9, 15.5.8, 15.6.0-canary.59, 16.0.9, 16.1.0-canary.17</td>
+    </tr>
+    <tr>
+        <td><code>serialize-javascript</code></td>
+        <td>GHSA-5c6j-r48x-rmvq</td>
+        <td>HIGH</td>
+        <td>6.0.2</td>
+        <td>7.0.3</td>
     </tr>
     <tr>
         <td><code>tar</code></td>
